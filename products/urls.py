@@ -4,7 +4,10 @@ from .views import (
     ProductCreateView, 
     ProductRetrieveView, 
     ProductUpdateView, 
-    ProductDeleteView
+    ProductDeleteView,
+    SignupView,
+    LoginView,
+    LogoutView
 )
 
 urlpatterns = [
@@ -13,4 +16,8 @@ urlpatterns = [
     path('detail/<int:id>/', ProductRetrieveView.as_view(), name='product-detail'),
     path('update/<int:id>/', ProductUpdateView.as_view(), name='product-update'),
     path('delete/<int:id>/', ProductDeleteView.as_view(), name='product-delete'),
+
+    path('signup/', SignupView.as_view(), name='signup'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
 ]
